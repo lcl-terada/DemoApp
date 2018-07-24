@@ -11,11 +11,13 @@ import UIKit
 class InformationTopViewController: UIViewController, UITableViewDataSource {
     
     var items = [
-        (title: "応募受付8/6まで！書籍【全国 高速バスの不思議と謎】プレゼントのご案内", date: "2018/07/19", image: false),
-        (title: "アップデートのお知らせ ver2.7閲覧履歴を追加しました", date: "2018/06/19", image: false),
-        (title:"【プレゼントキャンペーン実施中】アンケートに答えて高速バス乗車便利グッズをもらおう！", date: "2017/09/06", image: true),
-        (title:"【ニュース】[画像有り+シェア有り]JRバス関東　高速バス指定席乗車券にQRコード添付でスムーズな乗車が可能に", date: "2016/06/20", image: true),
-        (title: "アプリをアップロードしていただき、ありがとうございます", date: "高速バス比較開発チーム", image: false)
+        //njlで何も入っていないことを表す
+        (title: "応募受付8/6まで！書籍【全国 高速バスの不思議と謎】プレゼントのご案内", date: "2018/07/19", image: nil),
+        (title: "アップデートのお知らせ ver2.7閲覧履歴を追加しました", date: "2018/06/19", image: nil),
+        //UIImageをひとつずついれる
+        (title:"【プレゼントキャンペーン実施中】アンケートに答えて高速バス乗車便利グッズをもらおう！", date: "2017/09/06", image:  UIImage(named: "bustowel.jpg")),
+        (title:"【ニュース】[画像有り+シェア有り]JRバス関東　高速バス指定席乗車券にQRコード添付でスムーズな乗車が可能に", date: "2016/06/20", image:  UIImage(named: "original.jpg")),
+        (title: "アプリをアップロードしていただき、ありがとうございます", date: "高速バス比較開発チーム", image: nil)
     ]
 
     override func viewDidLoad() {
@@ -28,8 +30,6 @@ class InformationTopViewController: UIViewController, UITableViewDataSource {
         tableView.translatesAutoresizingMaskIntoConstraints = false
         // カスタマイズビューを追加
         view.addSubview(tableView)
-        // コードが実行できているかbackgroundColorで判断する
-        view.backgroundColor = UIColor.red
         
         // オートレイアウトでtableViewを画面いっぱいに表示
         tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
@@ -37,7 +37,8 @@ class InformationTopViewController: UIViewController, UITableViewDataSource {
         tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
        
-        tableView.estimatedRowHeight = 20
+        //仮の値（小さいと成約がでるためある程度余裕を持つ）
+        tableView.estimatedRowHeight = 1000
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.reloadData()
     }
@@ -55,7 +56,7 @@ class InformationTopViewController: UIViewController, UITableViewDataSource {
         
         //　CustomCellを呼ぶ
         let cell = tableView.dequeueReusableCell(withIdentifier: "CustomCell", for: indexPath) as! CustomCell
-        // items内にあるtitleとdateを順に出す
+        // items内にあるtitleとdateとimageを順に出す
         cell.configure(title: items[indexPath.row].title, date: items[indexPath.row].date, image: items[indexPath.row].image)
         cell.accessoryType = .disclosureIndicator
         cell.layoutIfNeeded()

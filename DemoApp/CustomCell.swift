@@ -12,11 +12,13 @@ class CustomCell: UITableViewCell, UITextFieldDelegate {
 
     let titleLabel = UILabel()
     let dateLabel = UILabel()
-    let thumbnailImageView = UIImageView(image: nil)
+    var thumbnailImageView = UIImageView(image: nil)
     let badgeView = UIView()
     let badgeWrapperView = UIView()
     let button = UIButton()
     var thumbnailImageViewSizeConstraint: NSLayoutConstraint!
+    
+    private var myImageView: UIImageView!
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -30,8 +32,7 @@ class CustomCell: UITableViewCell, UITextFieldDelegate {
         badgeView.translatesAutoresizingMaskIntoConstraints = false
         // badgeWrapperViewに対してbadgeViewを追加する
         badgeWrapperView.addSubview(badgeView)
-    
-        thumbnailImageView.backgroundColor = UIColor.yellow
+
         thumbnailImageView.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(thumbnailImageView)
 
@@ -66,15 +67,13 @@ class CustomCell: UITableViewCell, UITextFieldDelegate {
         titleLabel.leadingAnchor.constraint(equalTo: thumbnailImageView.trailingAnchor, constant: 5.0).isActive = true
         titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -40.0).isActive = true
         titleLabel.numberOfLines = 0
-        titleLabel.sizeToFit()
 
         dateLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 2.0).isActive = true
         // dateLabelの左側はtitleLabelの左側と同じ位置なのでconstantも消す
         dateLabel.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor).isActive = true
-        dateLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -40.0).isActive = true
         dateLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10.0).isActive = true
         dateLabel.numberOfLines = 0
-        dateLabel.sizeToFit()
+        
     }
     
     // 22,23行目とセット
@@ -83,12 +82,18 @@ class CustomCell: UITableViewCell, UITextFieldDelegate {
     }
     
     // 新しい関数を定義（関数の中に関数はできない）
-    func configure(title: String, date: String, image: Bool) {
+    func configure(title: String, date: String, image: UIImage?) {
         titleLabel.text = title
+        titleLabel.sizeToFit()
+
         dateLabel.text = date
+        dateLabel.sizeToFit()
+        
         // Boolで画像があるかないかを分けて、あるときは画像サイズの50を表示
-        if image {
+        if image != nil {
             thumbnailImageViewSizeConstraint.constant = 50
+            // 画像をUIImageViewに設定する.
+            thumbnailImageView.image = image
         } else {
             thumbnailImageViewSizeConstraint.constant = 0
         }
