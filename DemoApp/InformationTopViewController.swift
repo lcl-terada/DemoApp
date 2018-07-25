@@ -30,21 +30,19 @@ class InformationTopViewController: UIViewController, UITableViewDataSource {
         tableView.translatesAutoresizingMaskIntoConstraints = false
         // カスタマイズビューを追加
         view.addSubview(tableView)
-        
         // オートレイアウトでtableViewを画面いっぱいに表示
         tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
         tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-       
         //仮の値（小さいと成約がでるためある程度余裕を持つ）
         tableView.estimatedRowHeight = 1000
         tableView.rowHeight = UITableViewAutomaticDimension
-        tableView.reloadData()
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+        
     }
     //　一つのsectionの中に入れるCellの数を決める
     func tableView(_ tableView:UITableView,numberOfRowsInSection section: Int) -> Int{
@@ -53,7 +51,6 @@ class InformationTopViewController: UIViewController, UITableViewDataSource {
     }
     //　Cellの内容をきめる
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         //　CustomCellを呼ぶ
         let cell = tableView.dequeueReusableCell(withIdentifier: "CustomCell", for: indexPath) as! CustomCell
         // items内にあるtitleとdateとimageを順に出す
