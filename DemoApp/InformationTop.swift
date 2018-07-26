@@ -105,12 +105,9 @@ class InformationTopCell: UITableViewCell {
         if image != nil {
             thumbnailImageViewSizeConstraint.constant = 70
             titleLabelLeadingConstraint.constant = 15
-            // 画像をUIImageViewに設定する.
         } else {
             thumbnailImageViewSizeConstraint.constant = 0
             titleLabelLeadingConstraint.constant = 0
-            // 画像がないときをUIImageViewに設定する.
-            thumbnailImageView.image = nil
         }
    }
     
