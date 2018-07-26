@@ -25,7 +25,7 @@ class InformationTopViewController: UIViewController, UITableViewDataSource {
         
         let tableView: UITableView = UITableView()
         tableView.dataSource = self
-        tableView.register(CustomCell.self, forCellReuseIdentifier: "CustomCell")
+        tableView.register(InformationTopCell.self, forCellReuseIdentifier: "InformationTopCell")
         // オートレイアウト時にUIViewのレイアウトが変更しないようにする
         tableView.translatesAutoresizingMaskIntoConstraints = false
         // カスタマイズビューを追加
@@ -52,7 +52,7 @@ class InformationTopViewController: UIViewController, UITableViewDataSource {
     //　Cellの内容をきめる
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         //　CustomCellを呼ぶ
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CustomCell", for: indexPath) as! CustomCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "InformationTopCell", for: indexPath) as! InformationTopCell
         // items内にあるtitleとdateとimageを順に出す
         cell.configure(title: items[indexPath.row].title, date: items[indexPath.row].date, image: items[indexPath.row].image)
         cell.accessoryType = .disclosureIndicator

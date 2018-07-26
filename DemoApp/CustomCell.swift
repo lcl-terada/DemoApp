@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CustomCell: UITableViewCell {
+class InformationTopCell: UITableViewCell {
 
     let titleLabel = UILabel()
     let dateLabel = UILabel()
