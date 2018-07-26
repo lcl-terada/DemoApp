@@ -34,7 +34,6 @@ class CustomCell: UITableViewCell {
         badgeWrapperView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
         badgeWrapperView.widthAnchor.constraint(equalToConstant: 40.0).isActive = true
         badgeWrapperView.heightAnchor.constraint(equalToConstant: 50.0).isActive = true
-        badgeWrapperView.backgroundColor = UIColor.brown
         
         /*
          * badgeView
