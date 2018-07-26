@@ -11,13 +11,13 @@ import UIKit
 class InformationTopViewController: UIViewController, UITableViewDataSource {
     
     var items = [
-        //njlで何も入っていないことを表す
+//        nilで何も入っていないことを表す
         (title: "応募受付8/6まで！書籍【全国 高速バスの不思議と謎】プレゼントのご案内", date: "2018/07/19", image: nil),
-        (title: "アップデートのお知らせ ver2.7閲覧履歴を追加しました", date: "2018/06/19", image: nil),
-        //UIImageをひとつずついれる
+//        (title: "アップデートのお知らせ ver2.7閲覧履歴を追加しました", date: "2018/06/19", image: nil),
+//        //UIImageをひとつずついれる
         (title:"【プレゼントキャンペーン実施中】アンケートに答えて高速バス乗車便利グッズをもらおう！", date: "2017/09/06", image:  UIImage(named: "bustowel.jpg")),
-        (title:"【ニュース】[画像有り+シェア有り]JRバス関東　高速バス指定席乗車券にQRコード添付でスムーズな乗車が可能に", date: "2016/06/20", image:  UIImage(named: "original.jpg")),
-        (title: "アプリをアップロードしていただき、ありがとうございます", date: "高速バス比較開発チーム", image: nil)
+//        (title:"【ニュース】[画像有り+シェア有り]JRバス関東　高速バス指定席乗車券にQRコード添付でスムーズな乗車が可能に", date: "2016/06/20", image:  UIImage(named: "original.jpg")),
+//        (title: "アプリをアップロードしていただき、ありがとうございます", date: "高速バス比較開発チーム", image: nil)
     ]
 
     override func viewDidLoad() {
@@ -31,7 +31,7 @@ class InformationTopViewController: UIViewController, UITableViewDataSource {
         // カスタマイズビューを追加
         view.addSubview(tableView)
         // オートレイアウトでtableViewを画面いっぱいに表示
-        tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
+        tableView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
         tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
