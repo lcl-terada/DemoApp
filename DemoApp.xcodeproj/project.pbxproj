@@ -11,7 +11,7 @@
 		E74C30322106BD0E006BD009 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E74C30312106BD0E006BD009 /* Assets.xcassets */; };
 		E74C30352106BD0E006BD009 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E74C30332106BD0E006BD009 /* LaunchScreen.storyboard */; };
 		E74C303D2106CAB8006BD009 /* InformationTopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74C303C2106CAB8006BD009 /* InformationTopViewController.swift */; };
-		E74C303F2106CAC4006BD009 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74C303E2106CAC4006BD009 /* CustomCell.swift */; };
+		E74C303F2106CAC4006BD009 /* InformationTop.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74C303E2106CAC4006BD009 /* InformationTop.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,7 +21,7 @@
 		E74C30342106BD0E006BD009 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E74C30362106BD0E006BD009 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E74C303C2106CAB8006BD009 /* InformationTopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InformationTopViewController.swift; sourceTree = "<group>"; };
-		E74C303E2106CAC4006BD009 /* CustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
+		E74C303E2106CAC4006BD009 /* InformationTop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InformationTop.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,7 +59,7 @@
 				E74C30332106BD0E006BD009 /* LaunchScreen.storyboard */,
 				E74C30362106BD0E006BD009 /* Info.plist */,
 				E74C303C2106CAB8006BD009 /* InformationTopViewController.swift */,
-				E74C303E2106CAC4006BD009 /* CustomCell.swift */,
+				E74C303E2106CAC4006BD009 /* InformationTop.swift */,
 			);
 			path = DemoApp;
 			sourceTree = "<group>";
@@ -135,7 +135,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E74C302B2106BD0C006BD009 /* AppDelegate.swift in Sources */,
-				E74C303F2106CAC4006BD009 /* CustomCell.swift in Sources */,
+				E74C303F2106CAC4006BD009 /* InformationTop.swift in Sources */,
 				E74C303D2106CAB8006BD009 /* InformationTopViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

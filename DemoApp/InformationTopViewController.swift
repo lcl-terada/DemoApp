@@ -42,13 +42,14 @@ class InformationTopViewController: UIViewController, UITableViewDataSource {
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        
     }
+    
     //　一つのsectionの中に入れるCellの数を決める
     func tableView(_ tableView:UITableView,numberOfRowsInSection section: Int) -> Int{
         //　itemsにある要素数
         return items.count
     }
+    
     //　Cellの内容をきめる
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         //　CustomCellを呼ぶ
@@ -60,5 +61,3 @@ class InformationTopViewController: UIViewController, UITableViewDataSource {
         return cell
     }
 }
-
-

@@ -85,7 +85,6 @@ class InformationTopCell: UITableViewCell {
         dateLabel.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor).isActive = true
         dateLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10.0).isActive = true
         dateLabel.trailingAnchor.constraint(equalTo: titleLabel.trailingAnchor).isActive = true
-        
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -100,13 +99,13 @@ class InformationTopCell: UITableViewCell {
         dateLabel.text = date
         dateLabel.sizeToFit()
         
+        thumbnailImageView.image = image
+
         // Boolで画像があるかないかを分けて、あるときは画像サイズの50を表示
         if image != nil {
             thumbnailImageViewSizeConstraint.constant = 70
             titleLabelLeadingConstraint.constant = 15
             // 画像をUIImageViewに設定する.
-            thumbnailImageView.image = image
-            
         } else {
             thumbnailImageViewSizeConstraint.constant = 0
             titleLabelLeadingConstraint.constant = 0
